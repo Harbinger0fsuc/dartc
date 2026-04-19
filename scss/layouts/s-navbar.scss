@@ -1,0 +1,17 @@
+@use "../base/functions.scss" as func;
+
+.s-navbar {
+	position: fixed;
+	z-index: func.z-index("header") + 1;
+	inset-block-end: 0.8rem;
+	inset-inline-start: 50%;
+	width: 100%;
+	padding: 0.8rem 0;
+	pointer-events: none;
+	transform: translateX(-50%);
+
+	&__inner {
+		display: flex;
+		justify-content: center;
+	}
+}

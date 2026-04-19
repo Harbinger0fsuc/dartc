@@ -1,0 +1,128 @@
+// ----------------------------------------------
+// ---------------- Button -----------------
+// ----------------------------------------------
+
+/* ----- Use local files ----- */
+@use "./variables" as vars;
+@use "./mixins";
+
+/* ----- Use built-in sass modules ----- */
+@use "sass:color";
+
+/* ----- Base styles for button ----- */
+.btn {
+	display: inline-block;
+	font-weight: 600;
+	text-align: center;
+	vertical-align: middle;
+	border-style: solid;
+	transition: all var(--animation-duration) var(--animation-timing-function);
+
+	//variable located markup-template/scss/base/variables.scss
+	//size button mixin
+	// $btn-padding-y | $btn-padding-x | $btn-font-size | $btn-radius | $btn-border-width | $btn-line-height
+	@include mixins.button-size(); // default
+	//color button mixin $background | $color | $border | $hover-background | $hover-color | $hover-border
+	@include mixins.button-variant(
+		red,
+		#fff,
+		red,
+		transparent,
+		var(--text-color-secondary)
+	);
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+/* ----- Button types (primary, secondary) -----*/
+.btn--primary,
+input[type="button"].btn--primary,
+input[type="reset"].btn--primary,
+input[type="submit"].btn--primary,
+button[type="submit"].btn--primary {
+	--btn-color-primary: var(--bg-color-primary);
+	--btn-color-hover-primary: var(--bg-color-primary);
+
+	@include mixins.button-variant(var(--btn-color-primary), var(--color-white), var(--btn-color-primary), var(--btn-color-hover-primary), var(--color-white), var(--btn-color-primary));
+
+	&:focus-visible,
+	&:focus {
+		outline: none;
+		box-shadow: 0 1px 2px 0 rgba(10, 13, 18, 0.05), 0 0 0 4px #f4ebff;
+	}
+}
+
+.btn--primary:disabled,
+.btn--primary.btn--disabled,
+input[type="button"].btn--primary:disabled,
+input[type="button"].btn--primary.btn--disabled,
+input[type="reset"].btn--primary:disabled,
+input[type="reset"].btn--primary.btn--disabled,
+input[type="submit"].btn--primary:disabled,
+input[type="submit"].btn--primary.btn--disabled,
+button[type="submit"].btn--primary:disabled,
+button[type="submit"].btn--primary.btn--disabled {
+	pointer-events: none;
+	user-select: none;
+	background-color: #e9d7fe;
+	border-color: #e9d7fe;
+}
+
+/* ----- If need outline button ----- */
+// .btn-outline{
+// 	//color outline-button mixin $color | $color-hover | $hover-background | $color-border | $hover-border
+// 	@include mixins.button-outline-variant($btn-bg-color);
+// }
+
+/* ----- Button Sizes ----- */
+// if need other size button
+// .btn-lg {
+// 	@include mixins.button-size(
+// 			var(--btn-lg-y) var(--btn-lg-x),
+// 			var(--btn-lg-fz),
+// 			var(--btn-lg-r),
+// 			var(--btn-lg-b),
+// 			1.2
+// 		)
+// }
+
+/* ----- Link buttons. Make a button look and behave like a link ----- */
+.btn-link {
+	color: var(--base-link-color);
+	background-color: transparent;
+	border-color: transparent;
+	transition: all var(--animation-duration) var(--animation-timing-function);
+
+	&:hover {
+		text-decoration: none;
+		background-color: transparent;
+		border-color: transparent;
+	}
+}
+
+/* ----- Block button ----- */
+.btn-block {
+	display: block;
+	width: 100%;
+
+	// Vertically space out multiple block buttons
+	& + .btn-block {
+		margin-top: 15px;
+	}
+}
+
+/* ----- Specificity overrides ----- */
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+	&.btn-block {
+		width: 100%;
+	}
+}
+
+/* ----- Group button ----- */
+// .btn-group {
+
+// }

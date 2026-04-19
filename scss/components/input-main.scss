@@ -1,0 +1,63 @@
+.input-main {
+	$this: &;
+
+	&__label {
+		font-size: 1.5rem;
+		line-height: 1.4;
+		color: #717680;
+
+		span {
+			color: var(--color-violet);
+		}
+	}
+
+	&__text {
+		margin-block-start: 0.4rem;
+		font-size: 1.3rem;
+
+		p {
+			margin-bottom: 0;
+		}
+	}
+
+	// Modifiers
+	&--hasicon {
+		#{$this}__wrapper {
+			position: relative;
+		}
+
+		#{$this}__itself {
+			padding-right: 3.6rem;
+		}
+
+		#{$this}__ico {
+			position: absolute;
+			inset-block-start: 50%;
+			inset-inline-end: 1.2rem;
+			fill: none;
+			stroke: var(--color-black);
+			stroke-width: 0.15rem;
+			transform: translateY(-50%);
+		}
+	}
+
+	&--haserror {
+		#{$this}__itself {
+			border-color: var(--color-red);
+		}
+
+		#{$this}__text {
+			color: var(--color-red-sec);
+		}
+	}
+
+	&--hasnoerror {
+		#{$this}__itself {
+			border-color: var(--color-green);
+		}
+
+		#{$this}__text {
+			color: var(--color-green);
+		}
+	}
+}

@@ -1,0 +1,132 @@
+/* ----- Use different tools ----- */
+@use "../tools/include-media";
+
+.card-product {
+	$this: &;
+
+	padding: 0.4rem;
+	background-color: var(--color-white);
+	border-radius: 1.2rem;
+	box-shadow: 0 0.8rem 2.4rem 0 rgba(149, 157, 165, 0.20);
+
+	&__header {
+		position: relative;
+		width: 100%;
+		aspect-ratio: 1 / 1;
+		margin-block-end: 1.6rem;
+		overflow: hidden;
+		border-radius: 0.8rem;
+
+		@include include-media.media(">tablet") {
+			aspect-ratio: 1 / 0.6;
+		}
+	}
+
+	&__img {
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	.btn-wishlist {
+		position: absolute;
+		inset-block-start: 0.4rem;
+		inset-inline-end: 0.4rem;
+	}
+
+	&__body {
+		text-align: center;
+	}
+
+	&__title {
+		margin-block-end: 0.8rem;
+		font-size: 1.4rem;
+		line-height: 1.1;
+
+		@include include-media.media(">tablet") {
+			font-size: 1.8rem;
+		}
+	}
+
+	&__params {
+		display: inline-block;
+		margin-block-end: 1.2rem;
+		font-size: 1.2rem;
+		line-height: 1.33;
+		color: #717680;
+
+		@include include-media.media(">tablet") {
+			font-size: 1.6rem;
+		}
+	}
+
+	&__price {
+		display: flex;
+		gap: 0.8rem;
+		align-items: center;
+		justify-content: center;
+		margin-block-end: 1.6rem;
+	}
+
+	&-price__itself {
+		font-weight: 700;
+		line-height: 1;
+
+		@include include-media.media(">tablet") {
+			font-size: 2rem;
+		}
+	}
+
+	&-price__old {
+		font-size: 1.2rem;
+		color: #717680;
+		text-decoration-line: line-through;
+
+		@include include-media.media(">tablet") {
+			font-size: 1.4rem;
+		}
+	}
+
+	// Modifiers for the component
+	&--bg {
+		padding: 1.6rem;
+		border-radius: 1.6rem;
+
+		#{$this}__header {
+			@include include-media.media(">tablet") {
+				aspect-ratio: 1 / 0.5;
+			}
+		}
+
+		.btn-wishlist {
+			inset-block-start: 0.8rem;
+			inset-inline-end: 0.8rem;
+		}
+
+		#{$this}__body {
+			text-align: start;
+		}
+
+		#{$this}__title {
+			font-size: 2.4rem;
+		}
+
+		#{$this}__params {
+			font-size: 1.6rem;
+		}
+
+		#{$this}__price {
+			justify-content: start;
+		}
+
+		#{$this}-price__itself {
+			font-size: 2.4rem;
+		}
+
+		#{$this}-price__old {
+			font-size: 1.8rem;
+		}
+	}
+}

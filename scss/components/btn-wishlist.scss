@@ -1,0 +1,43 @@
+.btn-wishlist {
+	$this: &;
+
+	position: relative;
+	width: 40px;
+	height: 40px;
+	background-color: var(--color-white);
+	border: 0.1rem solid #f5f5f5;
+	border-radius: 50%;
+
+	&__ico {
+		position: absolute;
+		inset-block-start: 50%;
+		inset-inline-start: 50%;
+		visibility: hidden;
+		opacity: 0;
+		fill: transparent;
+		stroke: var(--color-black);
+		stroke-width: 0.15rem;
+		transition: 0.1s linear;
+		transform: translate(-50%, -50%);
+
+		&--default {
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+
+	&--added {
+		#{$this}__ico {
+			&--default,
+			&--hoveradd {
+				visibility: hidden;
+				opacity: 0;
+			}
+
+			&--added {
+				visibility: visible;
+				opacity: 1;
+			}
+		}
+	}
+}

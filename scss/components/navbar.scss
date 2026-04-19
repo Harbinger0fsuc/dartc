@@ -1,0 +1,27 @@
+.navbar {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: 1.6rem;
+	padding: 0.8rem;
+	margin-bottom: 0;
+	pointer-events: all;
+	background-color: var(--bg-color-secondary);
+	border-radius: 20rem;
+
+	&__link {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 40px;
+		height: 40px;
+		background-color: var(--color-white);
+		border: 0.1rem solid var(--bg-color-secondary);
+		border-radius: 100%;
+	}
+
+	&__ico {
+		fill: transparent;
+		stroke: var(--color-black);
+		stroke-width: 0.15rem;
+	}
+}

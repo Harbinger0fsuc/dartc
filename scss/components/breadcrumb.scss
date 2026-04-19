@@ -1,0 +1,42 @@
+/* ----- Use different tools ----- */
+@use "../tools/include-media";
+
+.breadcrumb {
+	$this: &;
+
+	margin-bottom: 1.5rem;
+	font-size: 1.4rem;
+	line-height: 1.5;
+	color: #6b7280;
+
+	@include include-media.media(">tablet") {
+		font-size: 1.8rem;
+	}
+
+	&__list,
+	&__item {
+		display: flex;
+	}
+
+	&__list {
+		margin-bottom: 0;
+		overflow-x: auto;
+		scrollbar-width: none;
+	}
+
+	&__item {
+		&:last-child {
+			#{$this}__separator {
+				display: none;
+			}
+		}
+	}
+
+	&__text {
+		white-space: nowrap;
+	}
+
+	&__separator {
+		margin-inline: 0.8rem;
+	}
+}

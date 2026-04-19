@@ -1,0 +1,53 @@
+/* ----- Use different tools ----- */
+@use "../tools/include-media";
+
+.card-product-top {
+	padding: 2.4rem;
+	background: linear-gradient(0deg, #e9d7fe 0%, #e9d7fe 100%), #d5e3d9;
+	border-radius: 1.6rem;
+
+	@include include-media.media(">tablet") {
+		padding: 4rem;
+	}
+
+	&__rating {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.8rem;
+		margin-block-end: 1.2rem;
+	}
+
+	&__star {
+		fill: rgba(66, 48, 125, 0.80);
+	}
+
+	&__title {
+		margin-block-end: 1.6rem;
+		font-size: 2.4rem;
+		font-weight: 700;
+		line-height: 1.33;
+		color: var(--color-violet-sec);
+	}
+
+	&__desc {
+		margin-block-end: 2rem;
+		color: #8573b1;
+
+		& > * {
+			margin-block-end: 1rem;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	.btn {
+		&.btn-block {
+			@include include-media.media(">tablet") {
+				width: 100%;
+				max-width: 250px;
+			}
+		}
+	}
+}

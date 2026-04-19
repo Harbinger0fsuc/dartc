@@ -1,0 +1,19 @@
+.menu-toggler {
+	position: relative;
+	place-content: center;
+	width: 4rem;
+	height: 4rem;
+	padding: 0.8rem;
+	background-color: var(--color-white);
+	border-radius: 50%;
+
+	&__ico {
+		position: absolute;
+		inset-block-start: 50%;
+		inset-inline-start: 50%;
+		stroke: var(--text-color-primary);
+		stroke-linecap: round;
+		stroke-width: 1.5;
+		transform: translate(-50%, -50%);
+	}
+}
