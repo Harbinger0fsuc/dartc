@@ -26,7 +26,7 @@ eval("{__webpack_require__.r(__webpack_exports__);\nconst addToWishlist = () => 
   \************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("{__webpack_require__.r(__webpack_exports__);\nconst toggleNav = () => {\n  const menuToggler = document.querySelector(\".menu-toggler\");\n  const navMobile = document.querySelector(\".nav-mobile\");\n  if (menuToggler && navMobile) {\n    menuToggler.addEventListener(\"click\", () => {\n      navMobile.classList.toggle(\"nav-mobile--active\");\n    });\n  }\n};\n/* harmony default export */ __webpack_exports__[\"default\"] = (toggleNav);\n\n//# sourceURL=webpack://main-gulp-template/./js/components/toggleNav.js?\n}");
+eval("{__webpack_require__.r(__webpack_exports__);\nconst toggleNav = () => {\n  const menuToggler = document.querySelector(\".menu-toggler\");\n  const navMobile = document.querySelector(\".nav-mobile\");\n  if (menuToggler && navMobile) {\n    menuToggler.addEventListener(\"click\", () => {\n      menuToggler.classList.toggle(\"menu-toggler--active\");\n      navMobile.classList.toggle(\"nav-mobile--active\");\n    });\n  }\n};\n/* harmony default export */ __webpack_exports__[\"default\"] = (toggleNav);\n\n//# sourceURL=webpack://main-gulp-template/./js/components/toggleNav.js?\n}");
 
 /***/ }),
 

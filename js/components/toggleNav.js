@@ -4,6 +4,7 @@ const toggleNav = () => {
 
 	if (menuToggler && navMobile) {
 		menuToggler.addEventListener("click", () => {
+			menuToggler.classList.toggle("menu-toggler--active");
 			navMobile.classList.toggle("nav-mobile--active");
 		});
 	}
